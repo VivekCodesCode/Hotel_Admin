@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+.sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background-color: #f8f9fa;
+  height: 100vh;
+  position: fixed;
+  padding-top: 30px;
+}
+.sidebar .nav-item {
+  margin: 10px 20px;
+  width: 200px;
+  height: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar .nav-item :active {
+  background-color: #fbb9b9;
+  color: #ec3a3a;
+  border-radius: 8px;
+  border-left: 3px solid red;
+}
+.sidebar .nav-link {
+  color: #989898;
+  font-size: 18px;
+  font-weight: 600;
+}
+.main-content {
+  margin-left: 250px;
+  height: auto;
+  padding: 80px;
+  background-color: #fcf5f5;
+}
+.nav-pills .nav-link.active {
+  background-color: transparent;
+  color: red;
+  border-bottom: 2px solid #ec3a3a;
+  border-radius: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-pills .nav-link {
+  color: black;
+}
+.tab-content .table {
+  margin-top: 20px;
+}
+.table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.project-list-table {
+  border-collapse: separate;
+  border-spacing: 0 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.project-list-table tr {
+  background-color: #ffffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.table-nowrap td,
+.table-nowrap th {
+  white-space: nowrap;
 }
+.table-borderless > :not(caption) > * > * {
+  border-bottom-width: 0;
+}
+.table > :not(caption) > * > * {
+  padding: 0.75rem 0.75rem;
+  background-color: var(--bs-table-bg);
+  border-bottom-width: 1px;
+  box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+.three_dots{
+  display: block !important;
+}
+img,
+svg {
+  vertical-align: middle;
+}
+.no_order h1{
+  position: absolute;
+  width: 100%;
+text-align: center;
+  background-color: #fcf5f5 !important ;
+  margin-top: 20px;
+
+}
+a {
+  color: #3b76e1;
+  text-decoration: none;
+}
+.nav-link img {
+  width: 18px;
+}
+
+.badge-soft-danger1 {
+  color: #f56e6e ;
+  background-color: rgba(245,110,110,.1);
+}
+.text-bg-warning{
+  color: rgb(228, 228, 86);
+} 
+
+/* .activee:hover{
+  text-decoration: underline !important;
+}
+
+*/
