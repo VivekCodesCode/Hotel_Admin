@@ -105,3 +105,31 @@ a {
 }
 
 */
+.waiter_login_navbar{
+  width: 100% !important;
+  background-color: rgb(33, 33, 33) !important;
+  color: orange !important;
+  font-weight: bolder;
+}
+.navbar_head_admin{
+  color: orange;
+}
+.admin_login_button{
+  background-color: black !important;
+  color: orange !important;
+  font-weight: bolder;
+}
+@media only screen and (max-width: 550px) {
+  .admin_login_container{
+    width: 120% !important;
+    align-self: center !important;
+    margin-left: -10%;
+  }
+}
+.admin_login_container{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 20px;
+}
+.rs-input{
+  background-color: white !important;
+}

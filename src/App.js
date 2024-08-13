@@ -107,7 +107,7 @@ function App() {
               href="#pills-all"
               role="tab"
               aria-controls="pills-all"
-              aria-selected="true"
+              aria-selected="false"
             >
               All Orders
             </a>
