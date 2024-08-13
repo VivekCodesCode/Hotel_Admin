@@ -35,7 +35,7 @@ function Login() {
 
   function onclick_listner() {
     console.log(waiter_data);
-    axios.post("http://localhost:8000/api/waiter_login", waiter_data).then((res) => {
+    axios.post("https://hotelloginbackend.onrender.com/api/waiter_login", waiter_data).then((res) => {
       if (res.data === "found") {
         console.log("User authenticated");
         navigate("/");
