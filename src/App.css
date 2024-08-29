@@ -1,33 +1,36 @@
-.sidebar {
-  min-width: 250px;
-  max-width: 250px;
+.waiter_profile_sidebar {
+
   background-color: #f8f9fa;
   height: 100vh;
   position: fixed;
   padding-top: 30px;
 }
-.sidebar .nav-item {
+.waiter_profile_sidebar .nav-item {
   margin: 10px 20px;
-  width: 200px;
+  width: 70px;
   height: 40px;
 }
 
-.sidebar .nav-item :active {
+.waiter_profile_sidebar .nav-item :active {
   background-color: #fbb9b9;
   color: #ec3a3a;
   border-radius: 8px;
   border-left: 3px solid red;
 }
-.sidebar .nav-link {
+.waiter_profile_sidebar .nav-link {
   color: #989898;
   font-size: 18px;
   font-weight: 600;
 }
 .main-content {
-  margin-left: 250px;
+  margin-left: 350px;
   height: auto;
   padding: 80px;
   background-color: #fcf5f5;
+}
+.waiter_profile_maincontainer{
+  background-color: #fcf5f5 !important;
+  padding-left: 10px;
 }
 .nav-pills .nav-link.active {
   background-color: transparent;
@@ -132,4 +135,76 @@ a {
 }
 .rs-input{
   background-color: white !important;
+}
+.waiter_profile-container {
+  padding: 20px;
+  background-color: #f7f7f7;
+  margin-left: 20px !important;
+
+ width: 140% !important;
+}
+
+.waiter_profile-heading {
+  font-weight: bold;
+  color: #343a40;
+}
+
+.waiter_profile-listItem {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.waiter_profile-avatar {
+  border: 2px solid #ff5733;
+}
+
+.waiter_profile-status.reserved {
+  color: orange;
+}
+
+.waiter_profile-status.cancelled {
+  color: red;
+}
+
+.waiter_profile-status.completed {
+  color: green;
+}
+
+.waiter_profile-formGroup {
+  margin-bottom: 15px;
+}
+
+.waiter_profile-saveButton {
+  width: 100%;
+  text-align: center;
+}
+
+.waiter_profile-sidebar {
+  background-color: #343a40;
+  height: 100vh;
+  width: 2vh;
+  padding-top: 20px;
+}
+
+.waiter_profile-sidebar-link {
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+}
+
+.waiter_profile-sidebar-link:hover {
+  background-color: #495057;
+  color: white;
+}
+.waiter_profile_sidebar{
+ 
+  width: 11vh !important;
+  z-index: 10000 !important;
+  background-color: rgb(255, 255, 255) !important;
+  position: sticky;
+  height: 100vh;
+}
+.waiter_profile_sidebar-item{
+  padding: 20px;
 }

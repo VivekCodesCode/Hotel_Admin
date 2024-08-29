@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
+import { FaPowerOff } from "react-icons/fa";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import './App.css';
 import { MdDelete } from "react-icons/md";
@@ -44,7 +45,6 @@ function App() {
       else if(i==index && val[1]=="green") return ["Delivery","red"];
       return val
     }))
-    
   }
   //This file is known as App.js
   return (

@@ -15,10 +15,9 @@ import {
   Divider,
   InputGroup
 } from 'rsuite';
-import { Link } from "react-router-dom";
 import { FaGithub, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 
-function Login() {
+function Signup() {
   const [waiter_data, set_waiter_data] = useState({
     name: "",
     password: ""
@@ -44,7 +43,7 @@ function Login() {
   .then((res) => {
       if (res.data === "found") {
           console.log("User authenticated");
-          navigate("/Tables"); // Ensure `navigate` is properly defined
+          navigate("/"); // Ensure `navigate` is properly defined
       } else {
           alert("Wrong password");
       }
@@ -64,7 +63,7 @@ function Login() {
       </Header>
       <Content>
         <Stack alignItems="center" justifyContent="center" style={{ height: '100vh' }}>
-          <Panel className="admin_login_container" header="Login Please" bordered style={{ width: 500 }}>
+          <Panel className="admin_login_container" header="Sign Up" bordered style={{ width: 500 }}>
             <Form fluid>
               <Form.Group>
                 <Form.ControlLabel>Name</Form.ControlLabel>
@@ -95,7 +94,7 @@ function Login() {
               <Divider>OR</Divider>
                <center>
                 <FaGithub style={{ marginRight: 8 }} />
-               <Link to="/Signup"> Signup </Link>
+                Forgot Password?
                 </center>
             </Form>
           </Panel>
@@ -105,4 +104,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;

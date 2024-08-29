@@ -5,14 +5,19 @@ import App from './App';
 import Login from './Login';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import WaiterProfile from './WaiterProfile';
+import Signup from './Signup';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <Router>
     
       <Routes>
-        <Route exact path='/' element={<App/>}/>
+      <Route exact path='/Tables' element={<App/>}/>
+        <Route exact path='/' element={<Login/>}/>
+        <Route exact path='/Signup' element={<Signup/>}/>
         <Route exact path='/Login' element={<Login/>}/>
+        <Route exact path='/WaiterProfile' element={<WaiterProfile/>}/>
       </Routes>
     
   </Router>
