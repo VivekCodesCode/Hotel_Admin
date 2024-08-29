@@ -1,0 +1,114 @@
+.admin_profile_container {
+    display: flex;
+  }
+  
+  .admin_profile_sidebar {
+    width: 60px;
+    background-color: #f5f5f5;
+  }
+  
+  .admin_profile_sidebar_item {
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .admin_profile_sidebar_item.active {
+    background-color: #ffc107;
+  }
+  
+  .admin_profile_content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .admin_profile_header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .admin_profile_main {
+    display: flex;
+  }
+  
+  .admin_profile_details {
+    width: 50%;
+  }
+  
+  .admin_profile_image {
+    border-radius: 50%;
+    width: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .admin_profile_form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .admin_profile_input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .admin_profile_btn_save {
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .admin_profile_history {
+    width: 50%;
+    padding-left: 20px;
+  }
+  
+  .admin_profile_booking {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .admin_profile_booking_info {
+    width: 70%;
+  }
+  
+  .admin_profile_booking_action {
+    text-align: right;
+  }
+  
+  .admin_profile_footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .admin_profile_btn_delete,
+  .admin_profile_btn_inactive,
+  .admin_profile_btn_save_details {
+    background-color: #e3ae0f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .admin_profile_btn_inactive {
+    background-color: #ddd;
+    color: #000;
+  }
+  
+  .admin_profile_btn_save_details {
+    background-color: #ffc107;
+  }
+  
