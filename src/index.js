@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import UserProfile from './WaiterProfile';
 import Login from './Login';
 import Signup from "./Signup"
 import reportWebVitals from './reportWebVitals';
@@ -14,6 +15,7 @@ root.render(
       <Routes>
       <Route exact path='/Tables' element={<App/>}/>
         <Route exact path='/' element={<Login/>}/>
+        <Route exact path='/WaiterProfile' element={<UserProfile/>}/>
         <Route exact path='/Signup' element={<Signup/>}/>
         <Route exact path='/Login' element={<Login/>}/>
       </Routes>
