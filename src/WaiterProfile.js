@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import vivek from "./Images/man.jpg"
 import { Container, Row, Col, Form, Button, Image, ListGroup, InputGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaPowerOff } from "react-icons/fa";
@@ -12,8 +13,30 @@ import {
 import { useSelector } from 'react-redux';
 import "./App.css";
 import Navbars from './Navbar';
+import axios from 'axios';
 const UserProfile = () => {
+  const [user_data,set_user_data]=useState({
+    name:"",
+    phone:"",
+    email:"",
+    image:"",
+  })
   const Name = useSelector((state) => state.amount[0]); // useSelector hook to read the state
+  useEffect(()=>{
+   function call_api(params) {
+    axios.get(`http://localhost:8000/api/get_waiter_details/${Name}`).then((res)=>{
+      set_user_data({
+        ...user_data,name:res.data.name,
+        phone:res.data.phone,
+        email:res.data.email,
+        image:res.data.image
+      })
+    })
+   }
+   if(Name){
+    call_api();
+   }
+  },[Name])
   return (
     <>
       {/* Header */}
@@ -48,7 +71,7 @@ const UserProfile = () => {
             <hr style={{ borderTop: '3px solid #ff5733' }} />
             <div className="align-items-center mb-3">
               <Image
-                src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
+                src={user_data.image}
                 roundedCircle
                 className="me-3 waiter_profile-avatar"
                 alt="User Avatar"
@@ -62,12 +85,12 @@ const UserProfile = () => {
 
                 <Form.Group controlId="mobileNumber" className="mt-3 waiter_profile-formGroup">
                   <Form.Label>Mobile Number</Form.Label>
-                  <Form.Control type="text" value="+1 16538552163" className="waiter_profile-input" readOnly />
+                  <Form.Control type="text" value={user_data.phone}className="waiter_profile-input" readOnly />
                 </Form.Group>
 
                 <Form.Group controlId="emailAddress" className="mt-3 waiter_profile-formGroup">
                   <Form.Label>Email Address</Form.Label>
-                  <Form.Control type="email" value="Bob.smith22@gmail.com" className="waiter_profile-input" readOnly />
+                  <Form.Control type="email" value={user_data.email} className="waiter_profile-input" readOnly />
                 </Form.Group>
 
                 <Form.Group controlId="joinedOn" className="mt-3 waiter_profile-formGroup">
@@ -138,7 +161,7 @@ const UserProfile = () => {
                 <Button variant="outline-secondary" className="me-2">Make Inactive</Button>
               </div>
 
-              <Button variant="warning" size="lg" className="waiter_profile-saveButton mt-3">
+              <Button onClick={()=>{console.log(user_data)}} variant="warning" size="lg" className="waiter_profile-saveButton mt-3">
                 Save/Update Details
               </Button>
             </ListGroup>
