@@ -1,7 +1,9 @@
 import axios from "axios";
 import 'rsuite/dist/rsuite.min.css';
+import { Audio } from 'react-loader-spinner'
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { bindActionCreators } from "redux";
 import { actionCreators } from "./State/index";
 import { useNavigate } from "react-router-dom";
@@ -26,7 +28,8 @@ function Login() {
     name: "",
     password: ""
   });
-  
+  const[display,set_display]=useState("hidden")
+  const[display1,set_display1]=useState("block")
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const dispatch=useDispatch()
@@ -37,14 +40,15 @@ function Login() {
     });
   }
 
-  function onclick_listner() {
-    console.log(waiter_data);
-    axios.post("https://hotelloginbackend.onrender.com/api/waiter_login", waiter_data, {
+ async function onclick_listner() {
+    set_display("visible");
+   await axios.post("https://hotelloginbackend.onrender.com/api/waiter_login", waiter_data, {
       headers: {
           'Content-Type': 'application/json',
       }
   })
   .then((res) => {
+    set_display("hidden")
       if (res.data === "found") {
           console.log("User authenticated");
           dispatch(actionCreators.set_name(waiter_data.name));
@@ -57,15 +61,32 @@ function Login() {
       console.error("An error occurred:", error); // Log the error for debugging
       alert("An error occurred. Please try again.");
   });
+
   }
 
   return (
     <Container>
+      
       <Header className="waiter_login_navbar"> 
         <Navbar className="waiter_login_navbar" appearance="inverse">
           <Navbar.Brand className="navbar_head_admin">CyberInstant</Navbar.Brand>
         </Navbar>
       </Header>
+  
+      <div  style={{visibility:display}} className="login_loader">
+      
+      <Audio
+  height="80"
+  width="80"
+  
+  radius="9"
+  color="black"
+  ariaLabel="loading"
+  wrapperStyle
+  wrapperClass
+/>
+</div>
+
       <Content>
         <Stack alignItems="center" justifyContent="center" style={{ height: '100vh' }}>
           <Panel className="admin_login_container" header="Login Please" bordered style={{ width: 500 }}>

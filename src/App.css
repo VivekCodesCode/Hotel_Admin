@@ -208,3 +208,9 @@ a {
 .waiter_profile_sidebar-item{
   padding: 20px;
 }
+.login_loader {
+  display: flex ;
+  justify-content: center; /* Centers the loader horizontally */
+  
+  
+}
