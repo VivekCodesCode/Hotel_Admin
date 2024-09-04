@@ -24,7 +24,7 @@ const UserProfile = () => {
   const Name = useSelector((state) => state.amount[0]); // useSelector hook to read the state
   useEffect(()=>{
    function call_api(params) {
-    axios.get(`http://localhost:8000/api/get_waiter_details/${Name}`).then((res)=>{
+    axios.get(`https://hotelloginbackend.onrender.com/api/get_waiter_details/${Name}`).then((res)=>{
       set_user_data({
         ...user_data,name:res.data.name,
         phone:res.data.phone,
