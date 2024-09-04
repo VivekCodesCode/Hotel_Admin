@@ -4,23 +4,25 @@ import './index.css';
 import App from './App';
 import UserProfile from './WaiterProfile';
 import Login from './Login';
-import Signup from "./Signup"
+import Signup from "./Signup";
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store from "./State/Store";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
-  <Router>
-    
+  <Provider store={store}>
+    <Router>
       <Routes>
-      <Route exact path='/Tables' element={<App/>}/>
+        <Route exact path='/Tables' element={<App/>}/>
         <Route exact path='/' element={<Login/>}/>
         <Route exact path='/WaiterProfile' element={<UserProfile/>}/>
         <Route exact path='/Signup' element={<Signup/>}/>
         <Route exact path='/Login' element={<Login/>}/>
       </Routes>
-    
-  </Router>
+    </Router>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

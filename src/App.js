@@ -4,9 +4,10 @@ import { FaPowerOff } from "react-icons/fa";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import './App.css';
 import { MdDelete } from "react-icons/md";
-
+import Navbars from './Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import chat from "./Images/chat.png"
+import { useSelector } from "react-redux";
 import discount from "./Images/discount.png"
 import setting from "./Images/settings.png"
 import shopping from "./Images/shopping-bag.png"
@@ -18,9 +19,10 @@ import Dropdown from 'react-bootstrap/Dropdown';
 function App() {
   const[admin_data,set_admin_data]=useState([])
   const[status,set_status]=useState(Array(69).fill(["Delivery","red"]));
-  
-
+  const [name,set_name]=useState("");
+  const amount = useSelector((state) => state.amount); // useSelector hook to read the state
   useEffect(()=>{
+    set_name(amount[amount.length-1]);
     axios.post("https://hotelloginbackend.onrender.com/api/final_order").then((res)=>{
       console.log(res.data);
       set_admin_data(res.data);
@@ -48,7 +50,10 @@ function App() {
   }
   //This file is known as App.js
   return (
+   <>
+   <Navbars name={name}/>
     <div className="d-flex">
+      
       
       {/* <div class="sidebar">
 
@@ -269,6 +274,7 @@ function App() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

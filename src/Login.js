@@ -1,6 +1,9 @@
 import axios from "axios";
 import 'rsuite/dist/rsuite.min.css';
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "./State/index";
 import { useNavigate } from "react-router-dom";
 import {
   Container,
@@ -26,7 +29,7 @@ function Login() {
   
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-
+  const dispatch=useDispatch()
   function onchange_listner(value, name) {
     set_waiter_data({
       ...waiter_data,
@@ -44,6 +47,7 @@ function Login() {
   .then((res) => {
       if (res.data === "found") {
           console.log("User authenticated");
+          dispatch(actionCreators.set_name(waiter_data.name));
           navigate("/Tables"); // Ensure `navigate` is properly defined
       } else {
           alert("Wrong password");

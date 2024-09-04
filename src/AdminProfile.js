@@ -1,7 +1,8 @@
 import React from 'react';
 import './AdminProfile.css'; // Import your CSS file
-
+import { useSelector } from "react-redux";
 const AdminProfile = () => {
+  const Name = useSelector((state) => state.amount[0]); // useSelector hook to read the state
   return (
     <div className="admin_profile_container">
       <div className="admin_profile_sidebar">
@@ -33,7 +34,7 @@ const AdminProfile = () => {
             />
             <div className="admin_profile_form">
               <label>Full Name</label>
-              <input type="text" value="Bob Smith" className="admin_profile_input"/>
+              <input type="text" value="{Name}" className="admin_profile_input"/>
               
               <label>Mobile Number</label>
               <input type="text" value="+1 16538552163" className="admin_profile_input"/>

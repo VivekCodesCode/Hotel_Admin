@@ -7,17 +7,15 @@ import {
   Header,
   Navbar,
 } from 'rsuite';
+import { useSelector } from 'react-redux';
 import "./App.css";
-
+import Navbars from './Navbar';
 const UserProfile = () => {
+  const Name = useSelector((state) => state.amount[0]); // useSelector hook to read the state
   return (
     <>
       {/* Header */}
-      <Header className="waiter_login_navbar">
-        <Navbar className="waiter_login_navbar" appearance="inverse">
-          <Navbar.Brand className="navbar_head_admin">CyberInstant</Navbar.Brand>
-        </Navbar>
-      </Header>
+     <Navbars/>
     <div className='waiter_profile_maincontainer d-flex'>
     <div className="waiter_profile_sidebar w-10" style={{backgroundColor:"black"}}>
     <div className="waiter_profile_sidebar-item active">
@@ -56,7 +54,7 @@ const UserProfile = () => {
               <Form className="waiter_profile-form mt-4">
                 <Form.Group controlId="fullName" className="waiter_profile-formGroup">
                   <Form.Label>Full Name</Form.Label>
-                  <Form.Control type="text" value="Bob Smith" className="waiter_profile-input" readOnly />
+                  <Form.Control type="text" value={Name} className="waiter_profile-input" readOnly />
                 </Form.Group>
 
                 <Form.Group controlId="mobileNumber" className="mt-3 waiter_profile-formGroup">
