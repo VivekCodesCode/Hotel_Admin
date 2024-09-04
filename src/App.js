@@ -36,6 +36,12 @@ function App() {
     }))
     axios.post("https://hotelloginbackend.onrender.com/api/delete_final_order",[table]);
   }
+  function refresh_table(params) {
+    axios.post("https://hotelloginbackend.onrender.com/api/final_order").then((res)=>{
+      console.log(res.data);
+      set_admin_data(res.data);
+    })
+  }
   function completed_orders(params) {
   set_admin_data(admin_data.filter((val,index,arr)=>{
     return status[index][1]!=="red";
@@ -118,17 +124,13 @@ function App() {
               All Orders
             </a>
           </li>
-          <li className="nav-item">
+          <li className="nav-item" onClick={refresh_table}>
             <a
               className="nav-link"
               id="pills-summary-tab"
-              data-toggle="pill"
-              href="#pills-summary"
-              role="tab"
-              aria-controls="pills-summary"
-              aria-selected="false"
+             style={{cursor:"pointer"}}
             >
-              Summary
+             <button> Refresh</button>
             </a>
           </li>
           <li onClick={completed_orders} className="nav-item">
