@@ -22,6 +22,7 @@ function App() {
   const [name,set_name]=useState("");
   const amount = useSelector((state) => state.amount); // useSelector hook to read the state
   useEffect(()=>{
+    console.log(amount[amount.length-1]);
     set_name(amount[amount.length-1]);
     axios.post("https://hotelloginbackend.onrender.com/api/final_order").then((res)=>{
       console.log(res.data);
